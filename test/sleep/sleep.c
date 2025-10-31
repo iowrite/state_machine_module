@@ -62,7 +62,7 @@ static struct Sleep_Data sleep_data = {
 
 };
 
-struct state protect = 
+struct state sleep = 
 {
     .entryAction = entryAction,
     .exitAction = exitAction,

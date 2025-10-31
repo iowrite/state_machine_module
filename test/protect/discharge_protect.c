@@ -59,7 +59,7 @@ struct Discharge_Protect_Data{
 
 };
 static struct Discharge_Protect_Data discharge_protect_data;
-struct state charge = 
+struct state discharge_protect = 
 {
     .entryAction = entryAction,
     .exitAction = exitAction,

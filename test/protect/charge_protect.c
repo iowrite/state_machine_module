@@ -59,7 +59,7 @@ struct Charge_Protect_Data{
 
 };
 static struct Charge_Protect_Data charge_protect_data;
-struct state charge = 
+struct state charge_protect = 
 {
     .entryAction = entryAction,
     .exitAction = exitAction,

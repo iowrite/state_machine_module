@@ -63,3 +63,18 @@ void check_will_go_to_sleep_action( void *data, void *newStateData)
 }
 
 
+
+bool check_curr_exist( void *condition)
+{
+    int cur_window = (int)condition;
+    if(abs(g_current) < abs(cur_window))
+    {
+        return true;
+    }
+    return false;
+}
+
+void check_curr_exist_action( void *data, void *newStateData)
+{
+    printf(" current less than current window, go to standby\n");
+}
