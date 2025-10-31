@@ -44,14 +44,14 @@ static struct transition trans[] = {
 
 };
 
-struct Sleep_Data{
+struct Fault_Data{
 
 };
-static struct Sleep_Data sleep_data = {
+static struct Fault_Data fault_data = {
 
 };
 
-struct state protect = 
+struct state fault = 
 {
     .entryAction = entryAction,
     .exitAction = exitAction,
@@ -60,7 +60,7 @@ struct state protect =
     .parentState = NULL,
     .numTransitions = ARRAY_SIZE(trans),
     .transitions = trans,
-    .data = &sleep_data,
+    .data = &fault_data,
 };
 
 

@@ -7,7 +7,7 @@
 
 extern struct state boot;
 extern struct state precharge;
-extern struct state normal;
+extern struct state run;
 extern struct state charge;
 extern struct state discharge;
 extern struct state charge_protect;
@@ -20,11 +20,11 @@ uint32_t get_tick_ms(void);
 
 struct stateMachine BMS;
 
-
+int g_current = 0;
 int main()
 {
     printf("State Machine Module Test\n");
-    stateM_init( &BMS, &normal);
+    state_machine_init( &BMS, &run);
 
     while(1)
     {

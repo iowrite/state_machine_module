@@ -49,7 +49,7 @@ struct stateMachine
 
 
 
-void stateM_init( struct stateMachine *stateMachine, struct state *initialState);
+void state_machine_init( struct stateMachine *stateMachine, struct state *initialState);
 
 
 
