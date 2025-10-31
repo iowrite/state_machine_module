@@ -1,0 +1,86 @@
+[
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/src",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -std=c99 -Wall -Wextra -Wconversion -Wstrict-prototypes -Wnewline-eof -ffunction-sections -fdata-sections -O0 -o CMakeFiles/state_machine_module.dir/state_machine.c.o -c /home/hm/Desktop/state_machine_module/src/state_machine.c",
+  "file": "/home/hm/Desktop/state_machine_module/src/state_machine.c",
+  "output": "src/CMakeFiles/state_machine_module.dir/state_machine.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/main.c.o -c /home/hm/Desktop/state_machine_module/test/main.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/main.c",
+  "output": "test/CMakeFiles/main.dir/main.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/transitions.c.o -c /home/hm/Desktop/state_machine_module/test/transitions.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/transitions.c",
+  "output": "test/CMakeFiles/main.dir/transitions.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/boot.c.o -c /home/hm/Desktop/state_machine_module/test/run/boot.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/boot.c",
+  "output": "test/CMakeFiles/main.dir/run/boot.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/charge.c.o -c /home/hm/Desktop/state_machine_module/test/run/charge.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/charge.c",
+  "output": "test/CMakeFiles/main.dir/run/charge.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/discharge.c.o -c /home/hm/Desktop/state_machine_module/test/run/discharge.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/discharge.c",
+  "output": "test/CMakeFiles/main.dir/run/discharge.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/precharge.c.o -c /home/hm/Desktop/state_machine_module/test/run/precharge.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/precharge.c",
+  "output": "test/CMakeFiles/main.dir/run/precharge.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/run.c.o -c /home/hm/Desktop/state_machine_module/test/run/run.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/run.c",
+  "output": "test/CMakeFiles/main.dir/run/run.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/run/standby.c.o -c /home/hm/Desktop/state_machine_module/test/run/standby.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/run/standby.c",
+  "output": "test/CMakeFiles/main.dir/run/standby.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/fault/fault.c.o -c /home/hm/Desktop/state_machine_module/test/fault/fault.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/fault/fault.c",
+  "output": "test/CMakeFiles/main.dir/fault/fault.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/protect/protect.c.o -c /home/hm/Desktop/state_machine_module/test/protect/protect.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/protect/protect.c",
+  "output": "test/CMakeFiles/main.dir/protect/protect.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/protect/charge_protect.c.o -c /home/hm/Desktop/state_machine_module/test/protect/charge_protect.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/protect/charge_protect.c",
+  "output": "test/CMakeFiles/main.dir/protect/charge_protect.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/protect/discharge_protect.c.o -c /home/hm/Desktop/state_machine_module/test/protect/discharge_protect.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/protect/discharge_protect.c",
+  "output": "test/CMakeFiles/main.dir/protect/discharge_protect.c.o"
+},
+{
+  "directory": "/home/hm/Desktop/state_machine_module/out/build/first/test",
+  "command": "clang  -I/home/hm/Desktop/state_machine_module/src -g -o CMakeFiles/main.dir/sleep/sleep.c.o -c /home/hm/Desktop/state_machine_module/test/sleep/sleep.c",
+  "file": "/home/hm/Desktop/state_machine_module/test/sleep/sleep.c",
+  "output": "test/CMakeFiles/main.dir/sleep/sleep.c.o"
+}
+]
