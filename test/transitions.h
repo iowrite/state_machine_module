@@ -17,4 +17,9 @@ void check_discharge_critical_error_action( void *data, void *newStateData);
 bool check_will_go_to_sleep( void *condition);
 void check_will_go_to_sleep_action( void *data, void *newStateData);
 
+
+bool check_curr_exist( void *condition);
+void check_curr_exist_action( void *data, void *newStateData);
+
+
 #endif

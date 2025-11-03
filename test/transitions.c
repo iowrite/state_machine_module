@@ -1,10 +1,14 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
 
 extern int g_current;
 bool check_hardware_faults(void *stateData)
 {
 
+
+    return false;
 }
 void check_hardware_faults_action(void *stateData, void *newStateData)
 {
@@ -55,6 +59,8 @@ void check_discharge_critical_error_action( void *data, void *newStateData)
 bool check_will_go_to_sleep( void *condition)
 {
 
+
+    return false;
 }
 
 void check_will_go_to_sleep_action( void *data, void *newStateData)
@@ -66,7 +72,7 @@ void check_will_go_to_sleep_action( void *data, void *newStateData)
 
 bool check_curr_exist( void *condition)
 {
-    int cur_window = (int)condition;
+    int cur_window = (int)(long long int)condition;                     // just avoid warning
     if(abs(g_current) < abs(cur_window))
     {
         return true;
