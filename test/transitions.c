@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "main.h"
 
 extern int g_current;
 bool check_hardware_faults(void *stateData)
 {
 
 
-    return false;
+    return g_hardware_fault;
 }
 void check_hardware_faults_action(void *stateData, void *newStateData)
 {
@@ -21,7 +22,7 @@ void check_hardware_faults_action(void *stateData, void *newStateData)
 bool check_charge_critical_error( void *condition)
 {
     // do some judge herr
-    bool res;
+    bool res = g_charge_critical_error;
     bool result_not_operated = (bool)condition;
     if(result_not_operated)
     {
@@ -40,7 +41,7 @@ void check_charge_critical_error_action( void *data, void *newStateData)
 bool check_discharge_critical_error( void *condition)
 {
     // do some judge herr
-    bool res;
+    bool res = g_discharge_critical_error;
     bool result_not_operated = (bool)condition;
     if(result_not_operated)
     {
@@ -60,7 +61,7 @@ bool check_will_go_to_sleep( void *condition)
 {
 
 
-    return false;
+    return g_sleep;
 }
 
 void check_will_go_to_sleep_action( void *data, void *newStateData)

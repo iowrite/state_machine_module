@@ -30,6 +30,16 @@ static void exitAction(void *stateData)
     printf("exit boot state\n");
 }
 
+
+bool check_poweronCMD(void *condition)
+{
+
+    return g_poweron_CMD;
+}
+
+
+
+
 static struct transition trans[] = {
     {
         .nextState = &precharge_state,

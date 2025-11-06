@@ -30,6 +30,7 @@ static void exitAction(void *stateData)
 
 bool check_wakeup(void *condition)
 {
+    return false;
 }
 
 void check_wakeup_action(void *data, void *newStateData)

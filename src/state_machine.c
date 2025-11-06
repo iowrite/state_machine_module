@@ -12,7 +12,12 @@ void state_machine_init( struct stateMachine *fsm, struct state *initialState)
    fsm->previousState = NULL;
 
    // do initial state's entry action
-   fsm->currentState->entryAction(fsm->currentState->data);
+   struct state *s = fsm->currentState;
+   do{
+      s->entryAction( s->data);
+      fsm->currentState = s;
+      s = s->entryState;
+   }while(s);
 
 }
 
@@ -35,6 +40,7 @@ int state_machine_run( struct stateMachine *fsm)
       if(s->runAction)
       {
          s->runAction(s->data);
+         s->isChecked = false;
       }
       s = s->parentState;
    }while(s);
