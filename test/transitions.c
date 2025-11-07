@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "main.h"
 
+#include "main.h"
 extern int g_current;
 bool check_hardware_faults(void *stateData)
 {
@@ -71,17 +72,45 @@ void check_will_go_to_sleep_action( void *data, void *newStateData)
 
 
 
-bool check_curr_exist( void *condition)
+bool check_curr( void *condition)
 {
-    int cur_window = (int)(long long int)condition;                     // just avoid warning
-    if(abs(g_current) < abs(cur_window))
+    int check_case = (int)(long long int)condition;
+    if(check_case == 0)
+    {    
+        if(abs(g_current) < BMS_CURRENT_WINDOW)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }else if(check_case == 1)
     {
-        return true;
+        if(g_current > BMS_CURRENT_WINDOW)
+        {
+            return true;
+        }else{
+            return false;
+
+        }
+    }else if(check_case == 2)
+    {
+        if(g_current < -BMS_CURRENT_WINDOW)
+        {
+            return true;
+        }else{
+            return false;
+        }
     }
     return false;
 }
 
-void check_curr_exist_action( void *data, void *newStateData)
+void check_curr_action( void *data, void *newStateData)
 {
     printf(" current less than current window, go to standby\n");
 }
+
+
+
+
+
+

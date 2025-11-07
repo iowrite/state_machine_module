@@ -1,3 +1,4 @@
+#include "state_machine.h"
 #ifndef _MAIN_H
 #define _MAIN_H 
 
@@ -7,6 +8,17 @@
 #define BMS_CURRENT_WINDOW                  2
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+
+extern struct state boot_state;
+extern struct state precharge_state;
+extern struct state run_state;
+extern struct state charge_state;
+extern struct state discharge_state;
+extern struct state charge_protect_state;
+extern struct state discharge_protect_state;
+extern struct state fault_state;
+extern struct state sleep_state;
+extern struct state standby_state;
 
 
 extern int g_current;

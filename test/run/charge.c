@@ -41,10 +41,19 @@ static struct transition trans[] = {
     },
     {
         .nextState = &standby_state,
-        .action = check_curr_exist_action,
-        .condition = (void *)(BMS_CURRENT_WINDOW),
-        .guard = check_curr_exist,
-    }};
+        .action = check_curr_action,
+        .condition = (void *)(0),
+        .guard = check_curr,
+    },
+    {
+        .nextState = &discharge_state,
+        .action = check_curr_action,
+        .condition = (void *)(2),
+        .guard = check_curr,
+    },
+
+
+};
 
 struct Charge_Data
 {

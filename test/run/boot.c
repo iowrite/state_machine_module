@@ -45,7 +45,7 @@ static struct transition trans[] = {
         .nextState = &precharge_state,
         .action = NULL,
         .condition = NULL,
-        .guard = NULL,
+        .guard = check_poweronCMD,
     },
 };
 

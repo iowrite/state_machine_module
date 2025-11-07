@@ -7,18 +7,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <sys/time.h>
-#include <time.h>
 
-extern struct state boot_state;
-extern struct state precharge_state;
-extern struct state run_state;
-extern struct state charge_state;
-extern struct state discharge_state;
-extern struct state charge_protect_state;
-extern struct state discharge_protect_state;
-extern struct state fault_state;
-extern struct state sleep_state;
-extern struct state standby_state;
+
+
 
 uint32_t get_tick_ms(void);
 
@@ -50,6 +41,7 @@ GtkWidget *button_discharge_critical_alarm;
 GtkWidget *button_sleep;
 GtkWidget *button_precharge;
 GtkWidget *scale_cur;
+GtkWidget *button_poweron;
 
 static void print_hello(GtkWidget *widget, gpointer data) {
   g_print("event trigger: ");
@@ -58,7 +50,12 @@ static void print_hello(GtkWidget *widget, gpointer data) {
     g_hardware_fault =
         gtk_check_button_get_active(GTK_CHECK_BUTTON(button_hardware_fault));
     g_print("hardware fault value:%d\n", g_hardware_fault);
-  } else if (widget == button_charge_critical_alarm) {
+  } else if (widget == button_poweron) {
+    g_print("poweron signal\n");
+    g_poweron_CMD = gtk_check_button_get_active(
+        GTK_CHECK_BUTTON(button_poweron));
+    g_print("charge critical alarm value:%d\n", g_charge_critical_error);
+  }else if (widget == button_charge_critical_alarm) {
     g_print("charge critical alarm signal\n");
     g_charge_critical_error = gtk_check_button_get_active(
         GTK_CHECK_BUTTON(button_charge_critical_alarm));
@@ -97,6 +94,11 @@ static void activate(GtkApplication *app, gpointer user_data) {
 
   GtkWidget *head = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
   GtkWidget *foot = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
+  button_poweron =
+      gtk_check_button_new_with_label("power on signal");
+  g_signal_connect(button_poweron, "toggled", G_CALLBACK(print_hello),
+                   NULL);
+
   button_hardware_fault =
       gtk_check_button_new_with_label("hardware fault signal");
   g_signal_connect(button_hardware_fault, "toggled", G_CALLBACK(print_hello),
@@ -129,6 +131,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
 
   gtk_box_append(GTK_BOX(box), head);
   gtk_box_append(GTK_BOX(box), button_hardware_fault);
+  gtk_box_append(GTK_BOX(box), button_poweron);
   gtk_box_append(GTK_BOX(box), button_charge_critical_alarm);
   gtk_box_append(GTK_BOX(box), button_discharge_critical_alarm);
   gtk_box_append(GTK_BOX(box), button_sleep);

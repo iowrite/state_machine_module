@@ -32,44 +32,20 @@ static void exitAction(void *stateData)
     printf("exit standby state\n");
 }
 
-bool check_current_dir(void *condition)
-{
-    int cur_window = (int)condition;
-    if (cur_window < 0 && g_current < cur_window)
-    {
-        return true;
-    }
-    if (cur_window > 0 && g_current > cur_window)
-    {
-        return true;
-    }
-    return false;
-}
 
-void check_current_dir_action(void *data, void *newStateData)
-{
-    if (newStateData == &charge_state.data)
-    {
-        printf(" current dir is positive, go to charge\n");
-    }
-    else if (newStateData == &discharge_state.data)
-    {
-        printf(" current dir is negative, go to discharge\n");
-    }
-}
 
 static struct transition trans[] = {
     {
         .nextState = &charge_state,
-        .action = check_current_dir_action,
-        .condition = (void *)BMS_CURRENT_WINDOW,
-        .guard = check_current_dir,
+        .action = check_curr_action,
+        .condition = (void *)1,
+        .guard = check_curr,
     },
     {
-        .nextState = &fault_state,
-        .action = check_current_dir_action,
-        .condition = (void *)(-BMS_CURRENT_WINDOW),
-        .guard = check_current_dir,
+        .nextState = &discharge_state,
+        .action = check_curr_action,
+        .condition = (void *)2,
+        .guard = check_curr,
     }};
 
 struct Standby_Data
